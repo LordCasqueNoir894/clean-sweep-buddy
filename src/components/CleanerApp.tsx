@@ -35,7 +35,7 @@ const CleanerApp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-4">
       <Card className="w-full max-w-md p-6 backdrop-blur-lg bg-white/90 shadow-xl border border-gray-100">
-        <h1 className="text-2xl font-medium text-center mb-2">Clean Sweep Buddy</h1>
+        <h1 className="text-2xl font-medium text-center mb-2">Vider le cache pour Ulysse</h1>
         <p className="text-gray-500 text-center mb-6">
           Nettoyage intelligent multi-navigateurs
         </p>
