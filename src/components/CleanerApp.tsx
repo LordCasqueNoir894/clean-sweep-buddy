@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import BrowserStatus from './BrowserStatus';
-import { invoke } from '@tauri-apps/api/tauri';
 
 const CleanerApp = () => {
   const [cleaning, setCleaning] = useState(false);
@@ -16,24 +15,13 @@ const CleanerApp = () => {
   });
   const { toast } = useToast();
 
-  const cleanBrowserCache = async (browser: string) => {
-    try {
-      await invoke('clean_browser_cache', { browser });
-      return true;
-    } catch (error) {
-      console.error(`Erreur lors du nettoyage de ${browser}:`, error);
-      return false;
-    }
-  };
-
   const simulateClean = async () => {
     setCleaning(true);
     
     const browsers = ['chrome', 'firefox', 'edge'];
     for (const browser of browsers) {
       setProgress(prev => ({ ...prev, [browser]: true }));
-      await cleanBrowserCache(browser);
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setProgress(prev => ({ ...prev, [browser]: false }));
     }
     
