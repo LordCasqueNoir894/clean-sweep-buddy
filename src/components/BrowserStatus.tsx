@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Chrome, Firefox, MonitorCheck } from "lucide-react";
+import { Chrome, Globe, MonitorCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface BrowserStatusProps {
@@ -14,7 +14,7 @@ const BrowserStatus = ({ name, active }: BrowserStatusProps) => {
       case 'chrome':
         return <Chrome className="h-5 w-5" />;
       case 'firefox':
-        return <Firefox className="h-5 w-5" />;
+        return <Globe className="h-5 w-5" />;
       case 'edge':
         return <MonitorCheck className="h-5 w-5" />;
       default:
